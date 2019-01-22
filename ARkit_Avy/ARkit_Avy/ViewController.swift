@@ -11,52 +11,59 @@ import SceneKit
 import ARKit
 
 class ViewController: UIViewController, ARSCNViewDelegate {
-
+    
     @IBOutlet var sceneView: ARSCNView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Set the view's delegate
-        sceneView.delegate = self
-        
-        // Show statistics such as fps and timing information
+        // fpsなどを表示する
         sceneView.showsStatistics = true
+        // ワールド座標軸を表示する
+        sceneView.debugOptions = .showWorldOrigin
         
-        // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
-        
-        // Set the scene to the view
+        // シーンを作る
+        let scene = SCNScene()
         sceneView.scene = scene
+        // ジオメトリ
+        let earth = SCNSphere(radius: 0.2)
+        // テクスチャ
+        earth.firstMaterial?.diffuse.contents = UIImage(named: "earth_1024")
+        // ノード
+        let earthNode = SCNNode(geometry: earth)
+        // アニメーション
+        let action = SCNAction.rotateBy(x: 0, y: .pi*2, z: 0, duration: 10)
+        earthNode.runAction(SCNAction.repeatForever(action))
+        // 位置決め
+        earthNode.position = SCNVector3(0.2, 0.3, -0.2)
+        // シーンに追加
+        sceneView.scene.rootNode.addChildNode(earthNode)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        // Create a session configuration
+        // セッションのコンフィグを作る
         let configuration = ARWorldTrackingConfiguration()
-
-        // Run the view's session
+        // セッションを開始
         sceneView.session.run(configuration)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
-        // Pause the view's session
+        // セッションを停止
         sceneView.session.pause()
     }
-
+    
     // MARK: - ARSCNViewDelegate
     
-/*
-    // Override to create and configure nodes for anchors added to the view's session.
-    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        let node = SCNNode()
+    /*
+     // Override to create and configure nodes for anchors added to the view's session.
+     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
+     let node = SCNNode()
      
-        return node
-    }
-*/
+     return node
+     }
+     */
     
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
