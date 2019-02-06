@@ -12,6 +12,7 @@ import ARKit
 import MultipeerConnectivity  // マルチピアコネクトセッションを利用するために必要
 
 class ViewController: UIViewController, ARSCNViewDelegate {
+    
     // 利用できるノードクラス
     static let models = [ "Cone":ConeNode.self, "Torus":TorusNode.self, "Pyramid":PyramidNode.self, "Box":BoxNode.self]
     static let modelNames =  Array(models.keys)
@@ -90,7 +91,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     @IBAction func tapSceneView(_ sender: UITapGestureRecognizer) {
         // 検知平面とタップ座標のヒットテスト
         let results = sceneView.hitTest(sender.location(in: sceneView),
-                                        types: [.existingPlaneUsingGeometry])
+                                        types: [.existingPlaneUsingExtent])
         // 検知平面をタップしていたら最前面のヒットデータをresultに入れる
         guard let result = results.first else { return }
         let tf = result.worldTransform // ヒットした地点のワールドトランスフォーム
