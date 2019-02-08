@@ -15,30 +15,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // アプリケーションの起動後にカスタマイズのポイントをオーバーライドする。
         return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+        // アプリケーションがアクティブ状態から非アクティブ状態に移行しようとしているときに送信されます。 これは、特定の種類の一時的な中断（電話の着信やSMSメッセージなど）、またはユーザーがアプリケーションを終了してバックグラウンド状態への移行を開始したときに発生する可能性がある。
+        // このメソッドを使用して、進行中のタスクを一時停止し、タイマーを無効にし、グラフィックレンダリングコールバックを無効にします。 ゲームはゲームを一時停止するためにこのメソッドを使うべき。
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        // このメソッドを使用して、共有リソースの解放、ユーザーデータの保存、タイマーの無効化、および後で終了した場合にアプリケーションを現在の状態に復元するのに十分なアプリケーション状態情報を格納する。
+        // アプリケーションがバックグラウンド実行をサポートしている場合は、ユーザーが終了したときにapplicationWillTerminate：の代わりにこのメソッドが呼び出される。
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        // バックグラウンドからアクティブ状態への移行の一部として呼び出される。 ここでは、背景入力時に加えられた変更の多くを元に戻すことができる。
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        // アプリケーションが非アクティブの間に一時停止された（またはまだ開始されていない）タスクを再開する。 アプリケーションが以前にバックグラウンドで動作していた場合は、必要に応じてユーザーインターフェイスを更新する。
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        // アプリケーションが終了しようとしているときに呼び出さる。 必要に応じてデータを保存する。 applicationDidEnterBackground：も参照しなければならない。
     }
 
 

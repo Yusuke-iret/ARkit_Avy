@@ -30,6 +30,7 @@
 		3B5229E3220844A000DB7427 /* PlaneNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneNode.swift; sourceTree = "<group>"; };
 		3B5229E6220844C200DB7427 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../../../Downloads/Part3_App/Chapter20/Section20-10/ARKit_Multiuser/ARKit_Multiuser/Base.lproj/Main.storyboard"; sourceTree = "<group>"; };
 		3B6E391021FEC08F005A063D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../Downloads/Part3_App/Chapter20/Section20-10/ARKit_Multiuser/ARKit_Multiuser/Assets.xcassets"; sourceTree = "<group>"; };
+		3B7277E7220C2CF100D25600 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "../../../../Downloads/Part3_App/Chapter20/Section20-10/ARKit_Multiuser/ARKit_Multiuser/en.lproj/Main.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +172,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				3B5229E6220844C200DB7427 /* Base */,
+				3B7277E7220C2CF100D25600 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
