@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3B22E8B5221BD17B00BFF347 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B22E8B4221BD17B00BFF347 /* Main.storyboard */; };
+		3B22E8B7221C00D000BFF347 /* HostPageConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B22E8B6221C00D000BFF347 /* HostPageConfiguration.swift */; };
 		3B4FAA9B21F71E45008806CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4FAA9A21F71E45008806CF /* AppDelegate.swift */; };
 		3B4FAA9D21F71E45008806CF /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B4FAA9C21F71E45008806CF /* art.scnassets */; };
 		3B4FAAA721F71E47008806CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B4FAAA521F71E47008806CF /* LaunchScreen.storyboard */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		3B22E8B4221BD17B00BFF347 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		3B22E8B6221C00D000BFF347 /* HostPageConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostPageConfiguration.swift; sourceTree = "<group>"; };
 		3B4FAA9721F71E45008806CF /* ARkit_Avy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARkit_Avy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4FAA9A21F71E45008806CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B4FAA9C21F71E45008806CF /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -29,7 +31,7 @@
 		3B5229DF2208446B00DB7427 /* extentionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extentionViewController.swift; sourceTree = "<group>"; };
 		3B5229E12208448200DB7427 /* NodeMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeMaker.swift; sourceTree = "<group>"; };
 		3B5229E3220844A000DB7427 /* PlaneNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneNode.swift; sourceTree = "<group>"; };
-		3B6E391021FEC08F005A063D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../Downloads/Part3_App/Chapter20/Section20-10/ARKit_Multiuser/ARKit_Multiuser/Assets.xcassets"; sourceTree = "<group>"; };
+		3B6E391021FEC08F005A063D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				3B5229E12208448200DB7427 /* NodeMaker.swift */,
 				3B5229E3220844A000DB7427 /* PlaneNode.swift */,
 				3B22E8B4221BD17B00BFF347 /* Main.storyboard */,
+				3B22E8B6221C00D000BFF347 /* HostPageConfiguration.swift */,
 			);
 			path = ARkit_Avy;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B5229E22208448200DB7427 /* NodeMaker.swift in Sources */,
+				3B22E8B7221C00D000BFF347 /* HostPageConfiguration.swift in Sources */,
 				3B5229E02208446B00DB7427 /* extentionViewController.swift in Sources */,
 				3B4FAA9B21F71E45008806CF /* AppDelegate.swift in Sources */,
 				3B5229E4220844A000DB7427 /* PlaneNode.swift in Sources */,
@@ -289,7 +293,6 @@
 		3B4FAAAC21F71E47008806CF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X7QTHZV9TP;
 				INFOPLIST_FILE = ARkit_Avy/Info.plist;
@@ -308,7 +311,6 @@
 		3B4FAAAD21F71E47008806CF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X7QTHZV9TP;
 				INFOPLIST_FILE = ARkit_Avy/Info.plist;
