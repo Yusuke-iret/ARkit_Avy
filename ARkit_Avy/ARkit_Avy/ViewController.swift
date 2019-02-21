@@ -29,13 +29,13 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     var mcSession: MCSession!
     var serviceAdvertiser: MCNearbyServiceAdvertiser!
     var serviceBrowser: MCNearbyServiceBrowser!
-    
+
+    @IBOutlet var sceneView: ARSCNView!
+    @IBOutlet weak var sessionInfoView: UIView!
     @IBOutlet weak var sessionInfoLabel: UILabel!
     @IBOutlet weak var myHostName: UILabel!
-    @IBOutlet weak var sessionInfoView: UIView!
     @IBOutlet weak var mappingStatusLabel: UILabel!
     @IBOutlet weak var sendMapButton: UIButton!
-    @IBOutlet var sceneView: ARSCNView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
