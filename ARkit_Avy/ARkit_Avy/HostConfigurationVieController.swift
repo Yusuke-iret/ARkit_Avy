@@ -8,14 +8,9 @@
 
 import UIKit
 
-class HostPageConfiguration: UIViewController, UITextFieldDelegate {
+class HostConfigurationVieController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
     }
 }

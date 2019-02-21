@@ -12,7 +12,7 @@
         <!--GameTitleViewController-->
         <scene sceneID="1b1-Pe-A8y">
             <objects>
-                <viewController id="2zZ-rF-FZ4" userLabel="GameTitleViewController" sceneMemberID="viewController">
+                <viewController id="2zZ-rF-FZ4" userLabel="GameTitleViewController" customClass="GameTitleViewController" customModule="ARkit_Avy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3xm-sX-Nq4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,7 +23,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Host"/>
                                 <connections>
-                                    <segue destination="C9g-F9-NGs" kind="presentation" id="AwF-Px-PzL"/>
+                                    <action selector="GoHostPage:" destination="bMz-Vf-NiQ" eventType="touchUpInside" id="6fa-6b-Fju"/>
+                                    <segue destination="C9g-F9-NGs" kind="presentation" id="fi9-R4-4Gn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="COZ-fD-jso">
@@ -45,6 +46,7 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bwR-xi-QCN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="bMz-Vf-NiQ" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="25m-DW-3Ri"/>
             </objects>
             <point key="canvasLocation" x="-535.20000000000005" y="-55.322338830584712"/>
@@ -52,7 +54,7 @@
         <!--MultiplayerJoinListViewController-->
         <scene sceneID="FWX-vR-fde">
             <objects>
-                <viewController id="E19-pK-rLe" userLabel="MultiplayerJoinListViewController" sceneMemberID="viewController">
+                <viewController id="E19-pK-rLe" userLabel="MultiplayerJoinListViewController" customClass="MultiplayerJoinListViewController" customModule="ARkit_Avy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cJz-GN-ObH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -83,9 +85,6 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                             <state key="normal" title="OK"/>
-                                            <connections>
-                                                <segue destination="uA9-Jq-9g4" kind="presentation" id="7cM-5o-qWK"/>
-                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="JoinList" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TH0-8T-ryX">
                                             <rect key="frame" x="16" y="19" width="240" height="21"/>
@@ -115,7 +114,7 @@
         <!--HostConfigurationViewController-->
         <scene sceneID="h1r-tj-za4">
             <objects>
-                <viewController id="C9g-F9-NGs" userLabel="HostConfigurationViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HostPage" id="C9g-F9-NGs" userLabel="HostConfigurationViewController" customClass="HostConfigurationVieController" customModule="ARkit_Avy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x5e-3I-LJs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -126,6 +125,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
+                                    <action selector="back:" destination="uRJ-YE-MQ1" eventType="touchUpInside" id="1M3-b5-dmn"/>
                                     <segue destination="2zZ-rF-FZ4" kind="presentation" id="oAL-zj-3th"/>
                                 </connections>
                             </button>
@@ -156,7 +156,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                             <state key="normal" title="Start"/>
                                             <connections>
-                                                <segue destination="uA9-Jq-9g4" kind="presentation" id="zJf-fF-8ew"/>
+                                                <segue destination="uA9-Jq-9g4" kind="presentation" id="za0-Id-D6s"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -173,6 +173,7 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h12-H1-uCS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="uRJ-YE-MQ1" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="c2O-a4-ZAu"/>
             </objects>
             <point key="canvasLocation" x="200.80000000000001" y="-55.322338830584712"/>
@@ -180,28 +181,11 @@
         <!--GameMainViewController-->
         <scene sceneID="PLo-nB-qaB">
             <objects>
-                <viewController id="uA9-Jq-9g4" userLabel="GameMainViewController" sceneMemberID="viewController">
+                <viewController id="uA9-Jq-9g4" userLabel="GameMainViewController" customClass="ViewController" customModule="ARkit_Avy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hvv-8z-NXt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fw0-eY-8km">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Eja-pv-yrY" appends="YES" id="7nk-Ux-HTk"/>
-                                </connections>
-                            </arscnView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISQ-jq-diC">
-                                <rect key="frame" x="16" y="605" width="40" height="42"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Exit"/>
-                                <connections>
-                                    <segue destination="2zZ-rF-FZ4" kind="presentation" id="gKR-A8-qyw"/>
-                                </connections>
-                            </button>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jgJ-Rg-py8">
                                 <rect key="frame" x="16" y="59" width="343" height="45"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -230,48 +214,66 @@
                                 <blurEffect style="light"/>
                             </visualEffectView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyz-dD-NQI">
-                                <rect key="frame" x="317" y="17" width="42" height="34"/>
+                                <rect key="frame" x="209" y="20" width="150" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eaP-KO-zsT">
-                                <rect key="frame" x="122" y="17" width="130" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="iKe-s4-cO9">
-                                    <rect key="frame" x="0.0" y="0.0" width="130" height="40"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLB-fQ-oBt">
-                                            <rect key="frame" x="5" y="5" width="119" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Send Map Button"/>
-                                        </button>
-                                    </subviews>
-                                </view>
-                                <blurEffect style="light"/>
-                            </visualEffectView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sF8-oO-bV6">
-                                <rect key="frame" x="16" y="24" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="16" y="20" width="150" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLB-fQ-oBt">
+                                <rect key="frame" x="137" y="611" width="100" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Map Send"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISQ-jq-diC">
+                                <rect key="frame" x="16" y="605" width="40" height="42"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Exit"/>
+                                <connections>
+                                    <action selector="Exit:" destination="nvJ-v9-RBy" eventType="touchUpInside" id="wj3-rP-DIu"/>
+                                    <segue destination="2zZ-rF-FZ4" kind="presentation" id="gKR-A8-qyw"/>
+                                </connections>
+                            </button>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fw0-eY-8km">
+                                <rect key="frame" x="-2" y="0.0" width="377" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Eja-pv-yrY" appends="YES" id="7nk-Ux-HTk"/>
+                                </connections>
+                            </arscnView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="lMa-73-3au"/>
                     </view>
+                    <connections>
+                        <outlet property="mappingStatusLabel" destination="CpC-ye-9ZR" id="0Mp-pF-HST"/>
+                        <outlet property="myHostName" destination="xyz-dD-NQI" id="old-Jd-obD"/>
+                        <outlet property="sceneView" destination="fw0-eY-8km" id="4sQ-Eu-a1p"/>
+                        <outlet property="sendMapButton" destination="RLB-fQ-oBt" id="gyk-Lu-J9u"/>
+                        <outlet property="sessionInfoLabel" destination="sF8-oO-bV6" id="BK6-p6-fFS"/>
+                        <outlet property="sessionInfoView" destination="jgJ-Rg-py8" id="Wuz-nC-VBP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2rD-k4-aXj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="nvJ-v9-RBy" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="Eja-pv-yrY"/>
             </objects>
             <point key="canvasLocation" x="925.60000000000002" y="-55.322338830584712"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zJf-fF-8ew"/>
         <segue reference="gKR-A8-qyw"/>
     </inferredMetricsTieBreakers>
 </document>
