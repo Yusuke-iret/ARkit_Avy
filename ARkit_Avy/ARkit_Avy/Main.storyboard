@@ -54,7 +54,7 @@
         <!--MultiplayerJoinListViewController-->
         <scene sceneID="FWX-vR-fde">
             <objects>
-                <viewController id="E19-pK-rLe" userLabel="MultiplayerJoinListViewController" customClass="MultiplayerJoinListViewController" customModule="ARkit_Avy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JoinPage" id="E19-pK-rLe" userLabel="MultiplayerJoinListViewController" customClass="MultiplayerJoinListViewController" customModule="ARkit_Avy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cJz-GN-ObH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,6 +85,9 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                             <state key="normal" title="OK"/>
+                                            <connections>
+                                                <segue destination="uA9-Jq-9g4" kind="presentation" id="0M1-fd-UgP"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="JoinList" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TH0-8T-ryX">
                                             <rect key="frame" x="16" y="19" width="240" height="21"/>
@@ -141,7 +144,10 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                            <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                            <connections>
+                                                <action selector="inputHostNameText:" destination="C9g-F9-NGs" eventType="editingDidEnd" id="bsM-Jo-Xhc"/>
+                                            </connections>
                                         </textField>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HostName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFU-B9-0x9">
                                             <rect key="frame" x="59" y="19" width="123" height="30"/>
@@ -153,9 +159,11 @@
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZxV-FD-dgT">
                                             <rect key="frame" x="94" y="99" width="53" height="40"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                             <state key="normal" title="Start"/>
                                             <connections>
+                                                <action selector="pushGameStartButton:" destination="C9g-F9-NGs" eventType="touchUpInside" id="fak-sb-ekH"/>
                                                 <segue destination="uA9-Jq-9g4" kind="presentation" id="za0-Id-D6s"/>
                                             </connections>
                                         </button>
@@ -171,6 +179,10 @@
                             <outletCollection property="gestureRecognizers" destination="c2O-a4-ZAu" appends="YES" id="RZj-uT-zEq"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="GameStartButton" destination="ZxV-FD-dgT" id="Nsl-cv-YO8"/>
+                        <outlet property="inputHostNameText" destination="SKE-eW-mBl" id="PcZ-AG-mMf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h12-H1-uCS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="uRJ-YE-MQ1" userLabel="Exit" sceneMemberID="exit"/>
@@ -181,7 +193,7 @@
         <!--GameMainViewController-->
         <scene sceneID="PLo-nB-qaB">
             <objects>
-                <viewController id="uA9-Jq-9g4" userLabel="GameMainViewController" customClass="ViewController" customModule="ARkit_Avy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GamePage" id="uA9-Jq-9g4" userLabel="GameMainViewController" customClass="ViewController" customModule="ARkit_Avy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hvv-8z-NXt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -281,6 +293,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gKR-A8-qyw"/>
+        <segue reference="0M1-fd-UgP"/>
+        <segue reference="t5B-K4-Ydt"/>
     </inferredMetricsTieBreakers>
 </document>
