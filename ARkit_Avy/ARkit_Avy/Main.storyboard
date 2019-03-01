@@ -12,7 +12,7 @@
         <!--GameTitleViewController-->
         <scene sceneID="1b1-Pe-A8y">
             <objects>
-                <viewController id="2zZ-rF-FZ4" userLabel="GameTitleViewController" customClass="GameTitleViewController" customModule="ARkit_Avy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TitlePage" id="2zZ-rF-FZ4" userLabel="GameTitleViewController" customClass="GameTitleViewController" customModule="ARkit_Avy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3xm-sX-Nq4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,16 +24,17 @@
                                 <state key="normal" title="Host"/>
                                 <connections>
                                     <action selector="GoHostPage:" destination="bMz-Vf-NiQ" eventType="touchUpInside" id="6fa-6b-Fju"/>
-                                    <segue destination="C9g-F9-NGs" kind="presentation" id="fi9-R4-4Gn"/>
+                                    <action selector="hostButton:" destination="2zZ-rF-FZ4" eventType="touchUpInside" id="65y-Cu-lGf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="COZ-fD-jso">
-                                <rect key="frame" x="163" y="450" width="48" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gpc-fL-GrG">
+                                <rect key="frame" x="160" y="431" width="55" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Join"/>
                                 <connections>
-                                    <segue destination="E19-pK-rLe" kind="presentation" id="ape-2u-e1w"/>
+                                    <action selector="GoHostPage:" destination="bMz-Vf-NiQ" eventType="touchUpInside" id="Jg5-lZ-NiS"/>
+                                    <action selector="joinButton:" destination="2zZ-rF-FZ4" eventType="touchUpInside" id="X6l-6m-ere"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -51,23 +52,14 @@
             </objects>
             <point key="canvasLocation" x="-535.20000000000005" y="-55.322338830584712"/>
         </scene>
-        <!--MultiplayerJoinListViewController-->
+        <!--JoinListViewController-->
         <scene sceneID="FWX-vR-fde">
             <objects>
-                <viewController storyboardIdentifier="JoinPage" id="E19-pK-rLe" userLabel="MultiplayerJoinListViewController" customClass="MultiplayerJoinListViewController" customModule="ARkit_Avy" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="cJz-GN-ObH">
+                <viewController storyboardIdentifier="JoinPage" id="E19-pK-rLe" userLabel="JoinListViewController" customClass="JoinListViewController" customModule="ARkit_Avy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="JoinPage" id="cJz-GN-ObH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="po0-U1-AD2">
-                                <rect key="frame" x="16" y="605" width="54" height="42"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <segue destination="2zZ-rF-FZ4" kind="presentation" id="t5B-K4-Ydt"/>
-                                </connections>
-                            </button>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qmm-FY-XF8">
                                 <rect key="frame" x="51" y="180" width="273" height="306"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -86,7 +78,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                             <state key="normal" title="OK"/>
                                             <connections>
-                                                <segue destination="uA9-Jq-9g4" kind="presentation" id="0M1-fd-UgP"/>
+                                                <action selector="okButton:" destination="E19-pK-rLe" eventType="touchUpInside" id="vsg-tr-82X"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="JoinList" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TH0-8T-ryX">
@@ -100,6 +92,19 @@
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uVv-f8-ERJ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="JoinPage" id="fwj-Sg-aVx">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="ju8-Vc-akw">
+                                            <connections>
+                                                <action selector="backButton:" destination="E19-pK-rLe" id="wZQ-js-enj"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <gestureRecognizers/>
@@ -108,6 +113,9 @@
                             <outletCollection property="gestureRecognizers" destination="aMe-gb-2Rj" appends="YES" id="N4A-E2-Hd5"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="okButton" destination="y0m-II-4Aw" id="hm8-rs-h7R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NGN-V6-vdL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="aMe-gb-2Rj"/>
@@ -122,16 +130,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gAM-mT-juo">
-                                <rect key="frame" x="16" y="605" width="54" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <action selector="back:" destination="uRJ-YE-MQ1" eventType="touchUpInside" id="1M3-b5-dmn"/>
-                                    <segue destination="2zZ-rF-FZ4" kind="presentation" id="oAL-zj-3th"/>
-                                </connections>
-                            </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iaw-x4-KC0">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="HostPage" id="BVP-oC-WFY">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="glb-vc-pcA">
+                                            <connections>
+                                                <action selector="backButton:" destination="C9g-F9-NGs" id="tji-Mj-Qm0"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lo4-dK-Bwc">
                                 <rect key="frame" x="67" y="260" width="240" height="147"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
@@ -139,8 +150,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="240" height="147"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SKE-eW-mBl">
-                                            <rect key="frame" x="16" y="57" width="209" height="34"/>
+                                        <textField opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SKE-eW-mBl">
+                                            <rect key="frame" x="16" y="56" width="209" height="34"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -164,7 +175,6 @@
                                             <state key="normal" title="Start"/>
                                             <connections>
                                                 <action selector="pushGameStartButton:" destination="C9g-F9-NGs" eventType="touchUpInside" id="fak-sb-ekH"/>
-                                                <segue destination="uA9-Jq-9g4" kind="presentation" id="za0-Id-D6s"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -185,7 +195,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h12-H1-uCS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="uRJ-YE-MQ1" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="c2O-a4-ZAu"/>
             </objects>
             <point key="canvasLocation" x="200.80000000000001" y="-55.322338830584712"/>
@@ -265,7 +274,7 @@
                                 <state key="normal" title="Exit"/>
                                 <connections>
                                     <action selector="Exit:" destination="nvJ-v9-RBy" eventType="touchUpInside" id="wj3-rP-DIu"/>
-                                    <segue destination="2zZ-rF-FZ4" kind="presentation" id="gKR-A8-qyw"/>
+                                    <action selector="exitTitle:" destination="uA9-Jq-9g4" eventType="touchUpInside" id="g96-PN-28X"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -292,8 +301,4 @@
             <point key="canvasLocation" x="925.60000000000002" y="-55.322338830584712"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="0M1-fd-UgP"/>
-        <segue reference="t5B-K4-Ydt"/>
-    </inferredMetricsTieBreakers>
 </document>

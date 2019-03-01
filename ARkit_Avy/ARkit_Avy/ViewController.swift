@@ -147,4 +147,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             print("データ配信エラー") // tryが失敗したときに実行される
         }
     }
+    @IBAction func exitTitle(_ sender: Any) {
+        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
 }

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3B080EF9221E4DA70042FADC /* MultiplayerJoinListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B080EF8221E4DA70042FADC /* MultiplayerJoinListViewController.swift */; };
+		3B080EF9221E4DA70042FADC /* JoinListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B080EF8221E4DA70042FADC /* JoinListViewController.swift */; };
 		3B22E8B5221BD17B00BFF347 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B22E8B4221BD17B00BFF347 /* Main.storyboard */; };
 		3B22E8B7221C00D000BFF347 /* HostConfigurationVieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B22E8B6221C00D000BFF347 /* HostConfigurationVieController.swift */; };
 		3B4FAA9B21F71E45008806CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4FAA9A21F71E45008806CF /* AppDelegate.swift */; };
@@ -22,7 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3B080EF8221E4DA70042FADC /* MultiplayerJoinListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplayerJoinListViewController.swift; sourceTree = "<group>"; };
+		3B080EF8221E4DA70042FADC /* JoinListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinListViewController.swift; sourceTree = "<group>"; };
 		3B22E8B4221BD17B00BFF347 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		3B22E8B6221C00D000BFF347 /* HostConfigurationVieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostConfigurationVieController.swift; sourceTree = "<group>"; };
 		3B4FAA9721F71E45008806CF /* ARkit_Avy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARkit_Avy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,7 +80,7 @@
 				3B22E8B4221BD17B00BFF347 /* Main.storyboard */,
 				3B22E8B6221C00D000BFF347 /* HostConfigurationVieController.swift */,
 				3B5FD978221E42650000B656 /* GameTitleViewController.swift */,
-				3B080EF8221E4DA70042FADC /* MultiplayerJoinListViewController.swift */,
+				3B080EF8221E4DA70042FADC /* JoinListViewController.swift */,
 			);
 			path = ARkit_Avy;
 			sourceTree = "<group>";
@@ -162,7 +162,7 @@
 				3B5229E02208446B00DB7427 /* extentionViewController.swift in Sources */,
 				3B5FD979221E42650000B656 /* GameTitleViewController.swift in Sources */,
 				3B4FAA9B21F71E45008806CF /* AppDelegate.swift in Sources */,
-				3B080EF9221E4DA70042FADC /* MultiplayerJoinListViewController.swift in Sources */,
+				3B080EF9221E4DA70042FADC /* JoinListViewController.swift in Sources */,
 				3B5229E4220844A000DB7427 /* PlaneNode.swift in Sources */,
 				3B5229DE2208444600DB7427 /* ViewController.swift in Sources */,
 			);
