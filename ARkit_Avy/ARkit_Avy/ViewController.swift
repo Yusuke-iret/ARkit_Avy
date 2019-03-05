@@ -29,14 +29,13 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     var mcSession: MCSession!
     var serviceAdvertiser: MCNearbyServiceAdvertiser!
     var serviceBrowser: MCNearbyServiceBrowser!
-    
+
     @IBOutlet var sceneView: ARSCNView!
-    @IBOutlet weak var sessionInfoLabel: UILabel!
     @IBOutlet weak var sessionInfoView: UIView!
+    @IBOutlet weak var sessionInfoLabel: UILabel!
+    @IBOutlet weak var myHostName: UILabel!
     @IBOutlet weak var mappingStatusLabel: UILabel!
-    @IBOutlet weak var myPeerIDLabel: UILabel!
     @IBOutlet weak var sendMapButton: UIButton!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,7 +65,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     // マルチピアコネクトセッションのセットアップとスタート
     func multipeerSetup( ) {
-        myPeerIDLabel.text = myPeerID.displayName // 自分のピアID名をラベルに表示しておく
+        myHostName.text = myPeerID.displayName // 自分のピアID名をラベルに表示しておく
         // MCSession（Multipeer Connect Session）
         mcSession = MCSession(peer: myPeerID, securityIdentity: nil, encryptionPreference: .required)
         mcSession.delegate = self // デリゲートになる
@@ -147,5 +146,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         } catch {
             print("データ配信エラー") // tryが失敗したときに実行される
         }
+    }
+    @IBAction func exitTitle(_ sender: Any) {
+        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
 }
