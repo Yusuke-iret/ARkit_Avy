@@ -36,7 +36,6 @@ class HostConfigurationVieController: UIViewController, UITextFieldDelegate{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
     // ボタン押下時のアクション
     @IBAction func pushGameStartButton(_ sender: UIButton) {
         
@@ -45,13 +44,24 @@ class HostConfigurationVieController: UIViewController, UITextFieldDelegate{
         
         // TextFieldの中身をクリア
         inputHostNameText.text = ""
+        
+        let storyboard: UIStoryboard = self.storyboard!
+        let nextVc = storyboard.instantiateViewController(withIdentifier: "GamePage")
+        self.present(nextVc, animated: true, completion: nil)
     }
-
     
+    @IBAction func backButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    //テキストフィールドを編集する直前に呼び出される
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        inputHostNameText.textAlignment = NSTextAlignment.center
+        return true
+    }
+    //Returnボタンがタップされた時に呼ばれる
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // キーボードを閉じる
         inputHostNameText.resignFirstResponder()
         return true
     }
-    
 }
