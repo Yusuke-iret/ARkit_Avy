@@ -77,20 +77,7 @@ extension ViewController: ARSessionDelegate {
     
     // マッピングステータスの更新
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
-        let mappingStatusMessage:String
-        switch frame.worldMappingStatus {
-        case .notAvailable, .limited:
-            mappingStatusMessage = "not Available or limited"
-            sendMapButton.isEnabled = false
-        case .extending:
-            mappingStatusMessage = "extending"
-            sendMapButton.isEnabled = !mcSession.connectedPeers.isEmpty
-        case .mapped:
-            mappingStatusMessage = "mapped"
-            sendMapButton.isEnabled = !mcSession.connectedPeers.isEmpty
-        }
         // セッションインフォラベル表示へ
-        mappingStatusLabel.text = mappingStatusMessage
         updateSessionInfoLabel(for: frame, trackingState: frame.camera.trackingState)
         // 送信ボタンの背景色
         if sendMapButton.isEnabled {
