@@ -13,9 +13,6 @@ class HostConfigurationVieController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var inputHostNameText: UITextField!
     @IBOutlet weak var GameStartButton: UIButton!
     
-    // 文字列保存用の変数
-    var textFieldString = ""
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         inputHostNameText.delegate = self
@@ -36,18 +33,17 @@ class HostConfigurationVieController: UIViewController, UITextFieldDelegate{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
     // ボタン押下時のアクション
     @IBAction func pushGameStartButton(_ sender: UIButton) {
         
-        // TextFieldから文字を取得
-        textFieldString = inputHostNameText.text!
+        let nextVc = storyboard!.instantiateViewController(withIdentifier: "GamePage") as? ViewController
+        let _ = nextVc?.view // ** hack code **
+        nextVc?.myHostName.text = inputHostNameText.text
+        self.present(nextVc!,animated: true, completion: nil)
         
         // TextFieldの中身をクリア
         inputHostNameText.text = ""
-        
-        let storyboard: UIStoryboard = self.storyboard!
-        let nextVc = storyboard.instantiateViewController(withIdentifier: "GamePage")
-        self.present(nextVc, animated: true, completion: nil)
     }
     
     @IBAction func backButton(_ sender: Any) {

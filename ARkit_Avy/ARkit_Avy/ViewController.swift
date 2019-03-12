@@ -34,8 +34,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     @IBOutlet weak var sessionInfoView: UIView!
     @IBOutlet weak var sessionInfoLabel: UILabel!
     @IBOutlet weak var myHostName: UILabel!
-    @IBOutlet weak var mappingStatusLabel: UILabel!
     @IBOutlet weak var sendMapButton: UIButton!
+    @IBOutlet weak var exitButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,8 +49,16 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sessionInfoView.layer.cornerRadius = 5.0
         sessionInfoView.layer.masksToBounds = true
         // 角丸ボタンにする
+        myHostName.layer.cornerRadius = 10.0
+        myHostName.layer.masksToBounds = true
+        // 角丸ボタンにする
         sendMapButton.layer.cornerRadius = 10.0
         sendMapButton.layer.masksToBounds = true
+        // 角丸ビューにする
+        exitButton.layer.cornerRadius = 8.0
+        exitButton.layer.masksToBounds = true
+        
+        myHostName.textAlignment = NSTextAlignment.center
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,7 +73,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     // マルチピアコネクトセッションのセットアップとスタート
     func multipeerSetup( ) {
-        myHostName.text = myPeerID.displayName // 自分のピアID名をラベルに表示しておく
         // MCSession（Multipeer Connect Session）
         mcSession = MCSession(peer: myPeerID, securityIdentity: nil, encryptionPreference: .required)
         mcSession.delegate = self // デリゲートになる
@@ -147,7 +154,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             print("データ配信エラー") // tryが失敗したときに実行される
         }
     }
-    @IBAction func exitTitle(_ sender: Any) {
+    @IBAction func exitButton(_ sender: Any) {
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
 }
